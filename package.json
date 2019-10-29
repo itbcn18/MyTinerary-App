@@ -1,31 +1,31 @@
 {
+  "_comment": "En los paquetes Json se guardan las configuraciones, instalaciones.  En este package Json están los del Backend",
   "name": "mytinerary-app",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "server.js",
+  "_comment2": "DEPENDENCIES: Son las instalaciones necesarias",
   "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "_comment": "CONCURRENTLY: Ejecuta dos scripts a la vez (cliente y servidor), permite arrancarlos",
+    "body-parser": "^1.19.0",
+    "concurrently": "^4.1.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3",  "_comment6": "Mira si hay algún cambio y lo hace automáticamente sin tener que iniciar el servidor y el cliente en cada cambio"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd client && npm start",
+    "_comment3": "// Haz un 'cd' a client y un npm start. Desde el backend estamos corriendo la carpeta del 'Client' que es el frontend ",
+    "server": "nodemon server.js",
+    "_comment4": "Arranca el servidor",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "_comment5": "Elimina cualquier localhost que no esté especificado, si todo está correcto, arranca el servidor y el cliente. "
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
